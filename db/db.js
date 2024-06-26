@@ -1,7 +1,7 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const { default: mongoose } = require("mongoose");
 const uri =
-  "mongodb+srv://tejastejale13:FiIFY04kXliDlBYM@express.dkvhksp.mongodb.net/?retryWrites=true&w=majority&appName=Express";
+  "mongodb+srv://tejastejale13:FiIFY04kXliDlBYM@express.t9n4mbi.mongodb.net/?retryWrites=true&w=majority&appName=Express";
 
 async function connectdb() {
   try {
