@@ -20,4 +20,29 @@ const createDrinks = async (req, res) => {
   }
 };
 
-module.exports = { createDrinks, getAllDrinks };
+const deleteDrinks = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await drinks.deleteOne({ _id: id });
+    res.json({
+      msg: "oh yah",
+    });
+  } catch {
+    res.send("bro id check kr error hai");
+  }
+};
+
+const updateDrinks = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const query = { _id: id };
+    const update = { $set: { name: req.body.name, price: req.body.price } };
+    const options = {};
+    await drinks.updateOne(query, update);
+    res.send("zala na bho update..!!");
+  } catch {
+    res.send("Bro yar id thik dal na");
+  }
+};
+
+module.exports = { createDrinks, getAllDrinks, deleteDrinks, updateDrinks };
